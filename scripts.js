@@ -11,21 +11,23 @@ function showQuestion(){
   quiz = document.getElementById("quiz");
   if(position >= questions.length) {
     quiz.innerHTML="<h2>You answered "+score+" out of "+questions.length+" questions correctly.</h2>";
-    document.getElementById("status").innerHTML = "End of quiz";
+    document.getElementById("status").innerHTML = "Completed";
     return false;
   }
-  document.getElementById("status").innerHTML = "<p>Choose the image that matches the Spanish word below.</p><p>Question "+(position+1)+" of "+questions.length+"</p>";
+  document.getElementById("status").innerHTML = "<p>Choose the image that matches the Spanish word below.</p><h3>Question "+(position+1)+" of "+questions.length+"</h3>";
   question = questions[position][0];
   a = questions[position][1];
   b = questions[position][2];
   c = questions[position][3];
   d = questions[position][4];
-  quiz.innerHTML = "<h3>"+question+"</h3>";
-  quiz.innerHTML += "<label><input type='radio' name='choices' value='a'><img src='img/"+a+".jpg'></label><br>";
-  quiz.innerHTML += "<label><input type='radio' name='choices' value='b'><img src='img/"+b+".jpg'></label><br>";
-  quiz.innerHTML += "<label><input type='radio' name='choices' value='c'><img src='img/"+c+".jpg'></label><br>";
-  quiz.innerHTML += "<label><input type='radio' name='choices' value='d'><img src='img/"+d+".jpg'></label><br>";
-  quiz.innerHTML += "<button onclick='checkAnswer()'>Submit</button>";
+  quiz.innerHTML = "<h3>'"+question+"'</h3>";
+  quiz.innerHTML += "<div class='row'>"
+  quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='a'><img src='img/"+a+".jpg'></label></div>";
+  quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='b'><img src='img/"+b+".jpg'></label></div>";
+  quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='c'><img src='img/"+c+".jpg'></label></div>";
+  quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='d'><img src='img/"+d+".jpg'></label></div>";
+  quiz.innerHTML += "</div>"
+  quiz.innerHTML += "<div class='text-center'><button onclick='checkAnswer()' class='btn btn-primary top-buffer'>Next Question</button></div>";
 }
 
 function checkAnswer(){
