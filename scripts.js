@@ -1,9 +1,11 @@
 let score = 0, position = 0, quiz, status, choice, choices, question, a, b, c, d;
 
 const questions = [
+  ["la playa", "mountains", "brushes", "trees", "beach", "d"],
   ["el gato", "bird", "cat", "dog", "rabbit", "b"],
   ["las fresas", "strawberries", "grapes", "bananas", "blueberries", "a"],
-  ["los zapatos", "books", "coffee", "shoes", "chairs", "c"]
+  ["los zapatos", "books", "coffee", "shoes", "chairs", "c"],
+  ["el árbol", "tree", "moon", "boat", "cafe", "a"]
 ];
 
 
