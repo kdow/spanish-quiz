@@ -14,6 +14,7 @@ function showQuestion(){
   if(position >= questions.length) {
     quiz.innerHTML="<h2>You answered "+score+" out of "+questions.length+" questions correctly.</h2>";
     document.getElementById("status").innerHTML = "Completed";
+    quiz.innerHTML += "<h3>Thanks for playing. You can view other projects on my <a href='https://kellydownes.net/' target='_blank'>portfolio site</a> and my <a href='https://github.com/kdow/' target='_blank'>Github</h3>"
     return false;
   }
   document.getElementById("status").innerHTML = "<p>Choose the image that matches the Spanish word below.</p><h3>Question "+(position+1)+" of "+questions.length+"</h3>";
@@ -22,7 +23,7 @@ function showQuestion(){
   b = questions[position][2];
   c = questions[position][3];
   d = questions[position][4];
-  quiz.innerHTML = "<h3>'"+question+"'</h3>";
+  quiz.innerHTML = "<h4>'"+question+"'</h4>";
   quiz.innerHTML += "<div class='row'>"
   quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='a'><img src='img/"+a+".jpg'></label></div>";
   quiz.innerHTML += "<div class='col-sm-6 top-buffer'><label><input type='radio' name='choices' value='b'><img src='img/"+b+".jpg'></label></div>";
